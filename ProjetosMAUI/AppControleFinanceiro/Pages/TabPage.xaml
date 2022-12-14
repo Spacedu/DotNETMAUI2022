@@ -3,8 +3,13 @@
             xmlns:pages="clr-namespace:AppControleFinanceiro.Pages"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             x:Class="AppControleFinanceiro.Pages.TabPage"
-            Title="TabPage">
-    <NavigationPage Title="TransactionPage">
+            Title="TabPage"
+            
+            xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="#000000"
+            >
+    <NavigationPage IconImageSource="tab1.png">
         <x:Arguments>
             <pages:TransactionPage />
         </x:Arguments>
