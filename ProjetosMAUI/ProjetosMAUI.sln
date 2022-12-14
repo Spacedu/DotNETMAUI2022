@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App 04", "App 04", "{E7EF6F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppJogoForca", "AppJogoForca\AppJogoForca.csproj", "{E99C030C-102E-41CE-ABFD-31C95688FF83}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App 05", "App 05", "{83F114C6-FF12-4CDB-B7A6-13C7F02C8ECA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppControleFinanceiro", "AppControleFinanceiro\AppControleFinanceiro.csproj", "{D6CFFA10-21E6-41D7-A253-30F3133351B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,12 @@ Global
 		{E99C030C-102E-41CE-ABFD-31C95688FF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E99C030C-102E-41CE-ABFD-31C95688FF83}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E99C030C-102E-41CE-ABFD-31C95688FF83}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D6CFFA10-21E6-41D7-A253-30F3133351B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6CFFA10-21E6-41D7-A253-30F3133351B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6CFFA10-21E6-41D7-A253-30F3133351B3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D6CFFA10-21E6-41D7-A253-30F3133351B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6CFFA10-21E6-41D7-A253-30F3133351B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6CFFA10-21E6-41D7-A253-30F3133351B3}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +95,7 @@ Global
 		{9FB110F2-4B8F-4879-82AA-ED550D18FAB7} = {3AEB0A89-3075-4ACC-8706-88EC0FE04D8C}
 		{A7C1C1AE-141F-4F98-835A-6FC1CA2E6B4E} = {718035F7-CA56-4495-ACD2-350CE700949D}
 		{E99C030C-102E-41CE-ABFD-31C95688FF83} = {E7EF6FEC-C7D4-47F4-ACE0-64EB0D9D2FFC}
+		{D6CFFA10-21E6-41D7-A253-30F3133351B3} = {83F114C6-FF12-4CDB-B7A6-13C7F02C8ECA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}

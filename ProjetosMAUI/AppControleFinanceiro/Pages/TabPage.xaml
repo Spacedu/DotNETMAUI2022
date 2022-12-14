@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:pages="clr-namespace:AppControleFinanceiro.Pages"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="AppControleFinanceiro.Pages.TabPage"
+            Title="TabPage">
+    <NavigationPage Title="TransactionPage">
+        <x:Arguments>
+            <pages:TransactionPage />
+        </x:Arguments>
+    </NavigationPage>
+    <pages:ReportPage />
+</TabbedPage>
