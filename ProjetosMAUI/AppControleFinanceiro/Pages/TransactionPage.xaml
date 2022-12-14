@@ -5,9 +5,18 @@
              NavigationPage.HasNavigationBar="False"
              Title="TransactionPage">
     <VerticalStackLayout>
-        <Label 
-            Text="TransactionPage"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid Padding="10" BackgroundColor="#000000" RowDefinitions="30" ColumnDefinitions="30, *, 30">
+            <Image Grid.Column="0" Source="arrowleft.png" />
+            <Label Grid.Column="1" 
+                   HorizontalTextAlignment="Center" 
+                   VerticalTextAlignment="Center" 
+                   Text="Outubro - 2022" 
+                   TextColor="White" 
+                   
+                   FontFamily="OpenSansSemibold"
+                   FontSize="20"
+                   />
+            <Image Grid.Column="2" Source="arrowright.png" />
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
