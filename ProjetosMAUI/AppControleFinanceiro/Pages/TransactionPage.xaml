@@ -18,5 +18,35 @@
                    />
             <Image Grid.Column="2" Source="arrowright.png" />
         </Grid>
+
+        <Grid Padding="25" BackgroundColor="#000000" RowDefinitions="22,44" ColumnDefinitions="3*,1*">
+            <Label Text="Total" 
+                   TextColor="#979797" 
+                   FontSize="18" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   />
+            <Label Text="R$ 15.000,00" 
+                   FontFamily="OpenSansSemibold" 
+                   FontSize="36" 
+                   TextColor="White" 
+                   Grid.Row="1" 
+                   Grid.Column="0"
+                   />
+            <Button Text="+" 
+                    TextColor="#000000"
+                    FontSize="32"                    
+                    BackgroundColor="#8CDB24"
+                    CornerRadius="27"                    
+                    HeightRequest="55"
+                    WidthRequest="55"                                        
+                    Grid.Column="1" 
+                    Grid.RowSpan="2"
+                    HorizontalOptions="End"
+                    />
+
+
+
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
