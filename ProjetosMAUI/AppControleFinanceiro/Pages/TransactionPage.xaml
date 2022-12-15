@@ -18,7 +18,6 @@
                    />
             <Image Grid.Column="2" Source="arrowright.png" />
         </Grid>
-
         <Grid Padding="25" BackgroundColor="#000000" RowDefinitions="22,44" ColumnDefinitions="3*,1*">
             <Label Text="Total" 
                    TextColor="#979797" 
@@ -48,5 +47,18 @@
 
 
         </Grid>
+        <ListView x:Name="LVOperations">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="25" RowDefinitions="Auto, Auto" ColumnDefinitions="*,Auto">
+                            <Label Text="{Binding Name}" TextColor="Black" FontSize="14" />
+                            <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" Grid.Row="1"  TextColor="#BABABA" FontSize="14" />
+                            <Label Text="{Binding Value, StringFormat='{0:C}'}" Grid.Column="1" TextColor="Black" FontSize="14" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </VerticalStackLayout>
 </ContentPage>

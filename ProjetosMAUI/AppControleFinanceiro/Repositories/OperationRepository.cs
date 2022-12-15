@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace AppControleFinanceiro.Repositories
 {
-    public class OperationRepository
+    public class OperationRepository : IOperationRepository
     {
         public List<Operation> GetOperations(DateTimeOffset date)
         {
             return new List<Operation>
             {
-                new Operation { 
+                new Operation {
                     Id = 1,
                     OperationType = OperationType.Income,
-                    Name = "Salário", 
-                    Date = new DateTimeOffset(2022, 10, 10, 0,0,0, new TimeSpan(0, -3, 0,0)),                    
-                    Value = 3600                    
+                    Name = "Salário",
+                    Date = new DateTimeOffset(2022, 10, 10, 0,0,0, new TimeSpan(0, -3, 0,0)),
+                    Value = 3600
                 },
                 new Operation {
                     Id = 2,
@@ -47,7 +47,8 @@ namespace AppControleFinanceiro.Repositories
         {
             throw new NotImplementedException();
         }
-        public void DeleteOperations(Operation operation) {
+        public void DeleteOperations(Operation operation)
+        {
             throw new NotImplementedException();
         }
     }
