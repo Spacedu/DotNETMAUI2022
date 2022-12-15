@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:AppControleFinanceiro.Libraries.Converters"
              x:Class="AppControleFinanceiro.Pages.TransactionPage"
              NavigationPage.HasNavigationBar="False"
              Title="TransactionPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:CurrencyValueConverter x:Key="CurrencyValueConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <VerticalStackLayout>
         <Grid Padding="10" BackgroundColor="#000000" RowDefinitions="30" ColumnDefinitions="30, *, 30">
             <Image Grid.Column="0" Source="arrowleft.png" />
@@ -54,7 +60,7 @@
                         <Grid Padding="25" RowDefinitions="Auto, Auto" ColumnDefinitions="*,Auto">
                             <Label Text="{Binding Name}" TextColor="Black" FontSize="14" />
                             <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" Grid.Row="1"  TextColor="#BABABA" FontSize="14" />
-                            <Label Text="{Binding Value, StringFormat='{0:C}'}" Grid.Column="1" TextColor="Black" FontSize="14" />
+                            <Label Text="{Binding ., Converter={StaticResource CurrencyValueConverter}}" Grid.Column="1" TextColor="Black" FontSize="14" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
