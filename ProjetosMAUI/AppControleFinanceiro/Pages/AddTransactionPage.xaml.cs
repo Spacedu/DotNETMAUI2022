@@ -49,12 +49,14 @@ public partial class AddTransactionPage : ContentPage
             MsgValidationError.Text += "Favor preencher o campo 'Valor'!" + Environment.NewLine;
         }
 
-        double result;
-        bool isConvert = double.TryParse(Value.Text.Trim(), out result);
-        if(!isConvert)
-        {
-            hasError = true;
-            MsgValidationError.Text += "O valor digitado no campo 'Valor' é inválido!";
+        if(Value.Text != null) { 
+            double result;
+            bool isConvert = double.TryParse(Value.Text.Trim(), out result);
+            if(!isConvert)
+            {
+                hasError = true;
+                MsgValidationError.Text += "O valor digitado no campo 'Valor' é inválido!";
+            }
         }
 
 
