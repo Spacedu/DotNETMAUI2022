@@ -48,10 +48,8 @@
                     Grid.Column="1" 
                     Grid.RowSpan="2"
                     HorizontalOptions="End"
+                    Clicked="OnButtonClicked_To_AddTransactionPage"
                     />
-
-
-
         </Grid>
         <ListView x:Name="LVOperations">
             <ListView.ItemTemplate>

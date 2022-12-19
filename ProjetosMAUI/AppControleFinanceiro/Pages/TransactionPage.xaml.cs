@@ -17,4 +17,9 @@ public partial class TransactionPage : ContentPage
 		LVOperations.ItemsSource = _list;
 
     }
+
+    private void OnButtonClicked_To_AddTransactionPage(object sender, EventArgs e)
+    {
+		Navigation.PushModalAsync(new AddTransactionPage());
+    }
 }

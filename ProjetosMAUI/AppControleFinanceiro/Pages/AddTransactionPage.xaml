@@ -4,9 +4,15 @@
              x:Class="AppControleFinanceiro.Pages.AddTransactionPage"
              Title="AddTransactionPage">
     <VerticalStackLayout>
-        <Label 
-            Text="AddTransactionPage"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid BackgroundColor="#000000" Padding="10" RowDefinitions="30" ColumnDefinitions="*,30">
+            <Label Text="Novo" 
+                   TextColor="White" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="20"
+                   FontFamily="OpenSansSemibold"
+                   />
+            <Image Source="close.png" Grid.Column="1" WidthRequest="17" />
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
