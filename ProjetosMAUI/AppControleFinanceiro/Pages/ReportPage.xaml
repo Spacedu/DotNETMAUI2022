@@ -5,9 +5,49 @@
              IconImageSource="tab2.png"
              >
     <VerticalStackLayout>
-        <Label 
-            Text="ReportPage"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid Padding="10" BackgroundColor="#000000" RowDefinitions="30" ColumnDefinitions="30, *, 30">
+            <Image Grid.Column="0" Source="arrowleft.png" />
+            <Label Grid.Column="1" 
+                   HorizontalTextAlignment="Center" 
+                   VerticalTextAlignment="Center" 
+                   Text="Outubro - 2022" 
+                   TextColor="White" 
+                   
+                   FontFamily="OpenSansSemibold"
+                   FontSize="20"
+                   />
+            <Image Grid.Column="2" Source="arrowright.png" />
+        </Grid>
+        <Grid Padding="25" BackgroundColor="#000000" RowDefinitions="22,44">
+            <Label Text="Saldo" 
+                   TextColor="#979797" 
+                   FontSize="18" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   />
+            <Label Text="R$ 15.000,00" 
+                   FontFamily="OpenSansSemibold" 
+                   FontSize="36" 
+                   TextColor="White" 
+                   Grid.Row="1" 
+                   Grid.Column="0"
+                   />
+        </Grid>
+
+        <Grid Padding="30, 100" RowSpacing="30" RowDefinitions="Auto, 30" ColumnDefinitions="*,*">
+            <BoxView Color="#8CDB24" 
+                     WidthRequest="40"
+                     HeightRequest="250"
+                     VerticalOptions="End"
+                     />
+            <BoxView Color="#C34444" 
+                     WidthRequest="40"
+                     HeightRequest="70"
+                     Grid.Column="1"
+                     VerticalOptions="End"
+                     />
+            <Label Grid.Row="1" FontSize="18" TextColor="#969696"  HorizontalOptions="Center" Text="R$ 3.600,00" />
+            <Label Grid.Row="1" FontSize="18" TextColor="#969696" HorizontalOptions="Center" Grid.Column="1"  Text="R$ 840,00" />
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
