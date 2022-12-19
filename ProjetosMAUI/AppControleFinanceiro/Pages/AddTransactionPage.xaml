@@ -12,19 +12,23 @@
                    FontSize="20"
                    FontFamily="OpenSansSemibold"
                    />
-            <Image Source="close.png" Grid.Column="1" WidthRequest="17" />
+            <Image Source="close.png" Grid.Column="1" WidthRequest="17">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTapped_Close" />
+                </Image.GestureRecognizers>
+            </Image>
         </Grid>
 
         <VerticalStackLayout Padding="15" Spacing="10">
-            <Grid ColumnDefinitions="*,*">
-                <RadioButton Content="Receita" />
-                <RadioButton Grid.Column="1"  Content="Despesa" />
+            <Grid RadioButtonGroup.GroupName="OperationType" ColumnDefinitions="*,*">
+                <RadioButton x:Name="Receita" IsChecked="True" Content="Receita" Value="Receita" />
+                <RadioButton x:Name="Despesa" Grid.Column="1" Content="Despesa" Value="Despesa"/>
             </Grid>
             
 
-            <Entry Placeholder="Nome" />
+            <Entry Placeholder="Nome" x:Name="Name"/>
             <DatePicker x:Name="Date" />
-            <Entry Placeholder="Valor" />
+            <Entry Placeholder="Valor" x:Name="Value" />
 
             <Button Text="Salvar" 
                     TextColor="#8CDB24"
@@ -34,6 +38,7 @@
                     CornerRadius="22"
                     HorizontalOptions="Center"
                     Padding="24,10"
+                    Clicked="OnButtonClicked_Save"
                     />
         </VerticalStackLayout>
 
