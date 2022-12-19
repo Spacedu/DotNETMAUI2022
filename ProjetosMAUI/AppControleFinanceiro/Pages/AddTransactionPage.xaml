@@ -14,5 +14,28 @@
                    />
             <Image Source="close.png" Grid.Column="1" WidthRequest="17" />
         </Grid>
+
+        <VerticalStackLayout Padding="15" Spacing="10">
+            <Grid ColumnDefinitions="*,*">
+                <RadioButton Content="Receita" />
+                <RadioButton Grid.Column="1"  Content="Despesa" />
+            </Grid>
+            
+
+            <Entry Placeholder="Nome" />
+            <DatePicker x:Name="Date" />
+            <Entry Placeholder="Valor" />
+
+            <Button Text="Salvar" 
+                    TextColor="#8CDB24"
+                    BorderColor="#8CDB24"
+                    BorderWidth="1"
+                    BackgroundColor="White"
+                    CornerRadius="22"
+                    HorizontalOptions="Center"
+                    Padding="24,10"
+                    />
+        </VerticalStackLayout>
+
     </VerticalStackLayout>
 </ContentPage>

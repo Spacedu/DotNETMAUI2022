@@ -6,4 +6,9 @@ public partial class AddTransactionPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    protected override void OnSizeAllocated(double width, double height)
+    {
+        Date.WidthRequest = width - 30;
+    }
 }
