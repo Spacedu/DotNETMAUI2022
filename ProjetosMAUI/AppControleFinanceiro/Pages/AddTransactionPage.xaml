@@ -20,6 +20,7 @@
         </Grid>
 
         <VerticalStackLayout Padding="15" Spacing="10">
+            <Label TextColor="Red" x:Name="MsgValidationError" />
             <Grid RadioButtonGroup.GroupName="OperationType" ColumnDefinitions="*,*">
                 <RadioButton x:Name="Receita" IsChecked="True" Content="Receita" Value="Receita" />
                 <RadioButton x:Name="Despesa" Grid.Column="1" Content="Despesa" Value="Despesa"/>

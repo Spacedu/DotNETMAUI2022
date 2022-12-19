@@ -21,7 +21,8 @@ public partial class AddTransactionPage : ContentPage
 
     private void OnButtonClicked_Save(object sender, EventArgs e)
     {
-        //TODO - Validar os dados digitados
+        if (!Validation()) return;
+
         var operation = new Operation
         {
             OperationType = (Receita.IsChecked) ? OperationType.Income : OperationType.Expenses,
@@ -29,5 +30,34 @@ public partial class AddTransactionPage : ContentPage
             Date = Date.Date,
             Value = double.Parse(Value.Text)
         };
+    }
+
+    private bool Validation()
+    {
+        bool hasError = false;
+        MsgValidationError.Text = string.Empty;
+
+        if (Name.Text == null || Name.Text.Trim().Length == 0)
+        {
+            hasError = true;
+            MsgValidationError.Text += "Favor preencher o campo 'Nome'!" + Environment.NewLine;
+        }
+
+        if (Value.Text == null || Value.Text.Trim().Length == 0)
+        {
+            hasError = true;
+            MsgValidationError.Text += "Favor preencher o campo 'Valor'!" + Environment.NewLine;
+        }
+
+        double result;
+        bool isConvert = double.TryParse(Value.Text.Trim(), out result);
+        if(!isConvert)
+        {
+            hasError = true;
+            MsgValidationError.Text += "O valor digitado no campo 'Valor' é inválido!";
+        }
+
+
+        return !hasError;
     }
 }
