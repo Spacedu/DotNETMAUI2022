@@ -10,6 +10,6 @@ namespace AppControleFinanceiro
     {
         private static string DatabaseName = "database.db";
         private static string DatabasePath = Path.Combine(FileSystem.Current.AppDataDirectory, DatabaseName);
-        public static string DatabaseConnection = $"Filename={AppSettings.DatabasePath};";
+        public static string DatabaseConnection = $"Filename={AppSettings.DatabasePath};Connection=Shared;";
     }
 }

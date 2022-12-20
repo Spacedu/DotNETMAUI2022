@@ -5,7 +5,7 @@ namespace AppControleFinanceiro.Pages;
 
 public partial class TransactionPage : ContentPage
 {
-	private OperationRepository _repository;
+	private IOperationRepository _repository;
 	private List<Operation> _list;
 	public TransactionPage()
 	{

@@ -28,7 +28,7 @@
             
 
             <Entry Placeholder="Nome" x:Name="Name"/>
-            <DatePicker x:Name="Date" />
+            <DatePicker x:Name="Date" Format="dd/MM/yyyy" />
             <Entry Placeholder="Valor" x:Name="Value" />
 
             <Button Text="Salvar" 

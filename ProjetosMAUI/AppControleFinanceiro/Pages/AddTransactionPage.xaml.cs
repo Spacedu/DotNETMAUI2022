@@ -1,13 +1,16 @@
 using AppControleFinanceiro.Models;
+using AppControleFinanceiro.Repositories;
 
 namespace AppControleFinanceiro.Pages;
 
 public partial class AddTransactionPage : ContentPage
 {
+    private IOperationRepository _repository;
 	public AddTransactionPage()
 	{
 		InitializeComponent();
-	}
+        _repository = new OperationRepository();
+    }
 
     protected override void OnSizeAllocated(double width, double height)
     {
@@ -30,6 +33,10 @@ public partial class AddTransactionPage : ContentPage
             Date = Date.Date,
             Value = double.Parse(Value.Text)
         };
+
+        _repository.AddOperations(operation);
+
+        Navigation.PopModalAsync();
     }
 
     private bool Validation()
