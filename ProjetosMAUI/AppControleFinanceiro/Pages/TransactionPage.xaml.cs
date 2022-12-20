@@ -45,4 +45,14 @@ public partial class TransactionPage : ContentPage
     {
 		Navigation.PushModalAsync(new AddTransactionPage());
     }
+
+    private void ButtonClicked_ToDelete(object sender, EventArgs e)
+    {
+        Button button = (Button)sender;
+        Operation operation = (Operation)button.CommandParameter;
+
+        _repository.DeleteOperations(operation);
+
+        LoadList();
+    }
 }

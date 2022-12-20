@@ -55,10 +55,31 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="25" RowDefinitions="Auto, Auto" ColumnDefinitions="*,Auto">
+                        <Grid Padding="25" RowDefinitions="Auto, Auto" ColumnDefinitions="*,Auto, Auto">
                             <Label Text="{Binding Name}" TextColor="Black" FontSize="14" />
                             <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" Grid.Row="1"  TextColor="#BABABA" FontSize="14" />
-                            <Label Text="{Binding ., Converter={StaticResource CurrencyValueConverter}}" Grid.Column="1" TextColor="Black" FontSize="14" />
+                            <Label Text="{Binding ., Converter={StaticResource CurrencyValueConverter}}" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center"  TextColor="Black" FontSize="14" />
+                            <Button Text="X" 
+                                    FontSize="10"
+                                    Grid.Column="2"
+                                    Grid.RowSpan="2"
+                                    BackgroundColor="Red"
+                                    CornerRadius="15"
+                                    Padding="5"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    
+                                    Margin="10, 0"
+                                    
+                                    MinimumHeightRequest="10"
+                                    MinimumWidthRequest="10"
+                                    
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    
+                                    Clicked="ButtonClicked_ToDelete"
+                                    CommandParameter="{Binding .}"
+                                    />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
