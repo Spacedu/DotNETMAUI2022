@@ -10,49 +10,27 @@ namespace AppControleFinanceiro.Repositories
 {
     public class OperationRepository : IOperationRepository
     {
+        LiteDatabase _db;
+        public OperationRepository()
+        {
+            _db = new LiteDatabase(AppSettings.DatabaseConnection);
+        }
         public List<Operation> GetOperations(DateTimeOffset date)
         {
-            var db = new LiteDatabase($"Filename={AppSettings.DatabasePath};");
-            
-            return new List<Operation>
-            {
-                new Operation {
-                    Id = 1,
-                    OperationType = OperationType.Income,
-                    Name = "Salário",
-                    Date = new DateTimeOffset(2022, 10, 10, 0,0,0, new TimeSpan(0, -3, 0,0)),
-                    Value = 3600
-                },
-                new Operation {
-                    Id = 2,
-                    OperationType = OperationType.Expenses,
-                    Name = "Feira no mercado",
-                    Date = new DateTimeOffset(2022, 10, 11, 0,0,0, new TimeSpan(0, -3, 0,0)),
-                    Value = 600
-                },
-                new Operation {
-                    Id = 3,
-                    OperationType = OperationType.Expenses,
-                    Name = "Sapato",
-                    Date = new DateTimeOffset(2022, 10, 21, 0,0,0, new TimeSpan(0, -3, 0,0)),
-                    Value = 200
-                },
-                new Operation {
-                    Id = 4,
-                    OperationType = OperationType.Expenses,
-                    Name = "Lanche",
-                    Date = new DateTimeOffset(2022, 10, 21, 0,0,0, new TimeSpan(0, -3, 0,0)),
-                    Value = 40
-                },
-            };
+            //TODO - Filtrar consulta
+            var collection = _db.GetCollection<Operation>("operations");
+            return collection.Query().ToList();
         }
         public void AddOperations(Operation operation)
         {
-            throw new NotImplementedException();
+            var collection = _db.GetCollection<Operation>("operations");
+            collection.Insert(operation);
+            collection.EnsureIndex(x => x.Name);
         }
         public void DeleteOperations(Operation operation)
         {
-            throw new NotImplementedException();
+            var collection = _db.GetCollection<Operation>("operations");
+            collection.Delete(operation.Id);
         }
     }
 }

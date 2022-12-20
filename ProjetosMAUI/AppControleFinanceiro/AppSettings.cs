@@ -8,7 +8,8 @@ namespace AppControleFinanceiro
 {
     public class AppSettings
     {
-        public static string DatabaseName = "database.db";
-        public static string DatabasePath = Path.Combine(FileSystem.Current.AppDataDirectory, DatabaseName);
+        private static string DatabaseName = "database.db";
+        private static string DatabasePath = Path.Combine(FileSystem.Current.AppDataDirectory, DatabaseName);
+        public static string DatabaseConnection = $"Filename={AppSettings.DatabasePath};";
     }
 }
