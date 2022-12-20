@@ -1,5 +1,7 @@
+using AppControleFinanceiro.Libraries.Messages;
 using AppControleFinanceiro.Models;
 using AppControleFinanceiro.Repositories;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace AppControleFinanceiro.Pages;
 
@@ -39,7 +41,7 @@ public partial class AddTransactionPage : ContentPage
         _repository.AddOperations(operation);
 
         //TransactionPage -> Buscar no banco.
-        
+        WeakReferenceMessenger.Default.Send(new ReloadListMessage(string.Empty));
 
         Navigation.PopModalAsync();
     }

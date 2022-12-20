@@ -1,5 +1,7 @@
+using AppControleFinanceiro.Libraries.Messages;
 using AppControleFinanceiro.Models;
 using AppControleFinanceiro.Repositories;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace AppControleFinanceiro.Pages;
 
@@ -11,6 +13,11 @@ public partial class TransactionPage : ContentPage
     {
         InitializeComponent();
         LoadList();
+
+        WeakReferenceMessenger.Default.Register<ReloadListMessage>(this, (obj, msg) =>
+        {
+            LoadList();
+        });
 
         /*
          * CommunityToolkit.MVVM: WeakReferenceMessage (Pub/Sub)
