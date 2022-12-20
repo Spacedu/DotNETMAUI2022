@@ -6,7 +6,6 @@ namespace AppControleFinanceiro.Pages;
 public partial class AddTransactionPage : ContentPage
 {
     private IOperationRepository _repository;
-    private TransactionPage _page;
 
     public AddTransactionPage()
 	{
@@ -14,12 +13,6 @@ public partial class AddTransactionPage : ContentPage
         _repository = new OperationRepository();
     }
 
-    public AddTransactionPage(TransactionPage page)
-    {
-        InitializeComponent();
-        _repository = new OperationRepository();
-        _page = page;
-    }
 
     protected override void OnSizeAllocated(double width, double height)
     {
@@ -46,7 +39,7 @@ public partial class AddTransactionPage : ContentPage
         _repository.AddOperations(operation);
 
         //TransactionPage -> Buscar no banco.
-        _page.LoadList();
+        
 
         Navigation.PopModalAsync();
     }

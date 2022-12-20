@@ -11,6 +11,19 @@ public partial class TransactionPage : ContentPage
     {
         InitializeComponent();
         LoadList();
+
+        /*
+         * CommunityToolkit.MVVM: WeakReferenceMessage (Pub/Sub)
+         * Xamarin.Forms: MessageCenter (Pub/Sub)
+         * 
+         * .NET7: MessagerCenter > WeakReferenceMessage.
+         * 
+         * Publishers: Publicador.
+         * Subscribers: Assinante/Inscrito.
+         * 
+         * Publisher: Avisar sobre o Cadastro > Mensagem > Subscribers(Assinantes).
+         * Subscriber: Cadastro, Atualização e Exclusão = Operations. > LoadList();
+         */
     }
 
     public void LoadList()
@@ -23,6 +36,6 @@ public partial class TransactionPage : ContentPage
 
     private void OnButtonClicked_To_AddTransactionPage(object sender, EventArgs e)
     {
-		Navigation.PushModalAsync(new AddTransactionPage(this));
+		Navigation.PushModalAsync(new AddTransactionPage());
     }
 }
