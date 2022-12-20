@@ -1,4 +1,5 @@
 ﻿using AppControleFinanceiro.Models;
+using LiteDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace AppControleFinanceiro.Repositories
     {
         public List<Operation> GetOperations(DateTimeOffset date)
         {
+            var db = new LiteDatabase($"Filename={AppSettings.DatabasePath};");
+            
             return new List<Operation>
             {
                 new Operation {
